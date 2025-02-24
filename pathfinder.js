@@ -5,7 +5,7 @@ const { GoalFollow, GoalBlock } = goals
 const bot = mineflayer.createBot({
     host: 'localhost',
     port: 25000,
-    username: 'pathfinder_Bot'
+    username: 'pathfinder'
 })
 
 bot.loadPlugin(pathfinder)
@@ -36,7 +36,7 @@ function locateAndMineBlock() {
         return
     }
 
-    bot.chat(`Found ${targetBlock} at ${blockToMine.position.x}, ${blockToMine.position.y}, ${blockToMine.position.z}. Moving to mine.`)
+    bot.chat(`Found ${targetBlock}. Moving to mine.`)
 
     const goal = new GoalBlock(blockToMine.position.x, blockToMine.position.y, blockToMine.position.z)
     bot.pathfinder.setGoal(goal, false)
